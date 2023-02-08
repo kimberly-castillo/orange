@@ -1,3 +1,4 @@
+//Filename: cmd/api/healthcheck.go
 package main
 
 import (
@@ -7,6 +8,6 @@ import (
 
 func (app *application) healthcheckHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "status: available\n")
-	fmt.Fprintf(w, "environment: %s \n ", app.config.env) 
+	fmt.Fprintf(w, "environment: %s \n ", app.config.env)
 	fmt.Fprintf(w, "version: %s\n", version)
 }
