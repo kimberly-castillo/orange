@@ -3,9 +3,9 @@
 package main
 
 import (
-	"new/http"
+	"net/http"
 
-	"github.com/julienshmidt/httprouter" //check picture on phone
+	"github.com/julienschmidt/httprouter"
 )
 
 //this function returns the router
