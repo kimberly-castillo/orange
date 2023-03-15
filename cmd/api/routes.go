@@ -12,6 +12,8 @@ import (
 func (app *application) routes() *httprouter.Router {
 	//create a new router
 	router := httprouter.New()
+	router.NotFound = http.HandlerFunc(app.methodNotAllowedResponse)
+	router.MethodNotAllowed = http.HandlerFunc(app.notFoundResponse)
 	router.HandlerFunc(http.MethodGet, "/v1/healthcheck", app.healthcheckHandler)
 	router.HandlerFunc(http.MethodPost, "/v1/schools", app.createSchoolHandler)
 	router.HandlerFunc(http.MethodGet, "/v1/schools/:id", app.showSchoolHandler)
